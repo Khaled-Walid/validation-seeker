@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validation Seeker</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="default.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <div class="default-window" id="starting-screen">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ultrices ipsum, non elementum sem. Integer
+      mollis, felis aliquet condimentum dictum, velit orci rhoncus turpis, ut fringilla justo magna a ipsum. Integer
+      tincidunt libero vitae accumsan varius. Curabitur quam diam, dignissim ut purus ut, pharetra tempor nunc. Nulla
+      hendrerit tortor non orci scelerisque, sit amet convallis urna lacinia. Curabitur tincidunt at ante at venenatis.
+      Integer ullamcorper dignissim ligula at gravida. Phasellus condimentum nunc nec semper vestibulum. Nunc consequat,
+      erat in vestibulum condimentum, velit quam mattis sem, vel molestie augue est non mauris.</p>
+    <button id="starting-button">
+      click me yla
+    </button>
+  </div>
+  <div class="default-window hide" id="choose-screen">
+    <h1>Heads or Tails?</h1>
+    <button id="heads">
+      HEADS
+    </button>
+    <button id="tails">
+      TAILS
+    </button>
+  </div>
+  <div class="default-window hide" id="game-screen">
+
+    <h1>Best of <span id="best-of">1</span></h1>
+
+    <h2>
+      <span>Heads: <span id="heads-counter">0</span> </span>
+      |
+      <span>Tails: <span id="tails-counter">0</span></span>
+    </h2>
+    <a href="javascript:void(0)" id="flip">
+      <img src="head.png" alt="Coin">
+    </a>
+  </div>
+
+  <div class="default-window hide" id="finishing-screen">
+    <h1>YOU WON</h1>
+    <button id="again-button">
+      Flip again?
+    </button>
+  </div>
+</body>
+
+</html>
