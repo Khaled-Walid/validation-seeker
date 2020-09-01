@@ -7,7 +7,6 @@ let isHeads = true;
 let coin;
 let counterHeads = 0;
 let counterTails = 0;
-let bestCounter = 1;
 
 const headsButton = document.getElementById("heads");
 const tailsButton = document.getElementById("tails");
@@ -34,10 +33,9 @@ function hide2(section1, section2, choice) {
   isHeads = choice;
   counterHeads=0
   counterTails=0
-  bestCounter=1
   headsCounter.innerHTML = `${counterHeads}`
   tailsCounter.innerHTML = `${counterTails}`
-  bestOf.innerHTML=`${bestCounter}`
+  bestOf.innerHTML=`1`
 }
 
 headsButton.addEventListener(
@@ -68,9 +66,9 @@ function flip() {
   }
   userCounter = isHeads ? counterHeads : counterTails;
   pcCounter = !isHeads ? counterHeads : counterTails;
-  ++bestCounter
-  if (bestCounter%2!==0){
-    bestOf.innerHTML=`${bestCounter}`
+
+  if (pcCounter>userCounter){
+    bestOf.innerHTML=`${(pcCounter*2)+1}`
   }
 
   
