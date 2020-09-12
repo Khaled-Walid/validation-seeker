@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #121212;
   font-size: 2em;
   color: white;
   display: flex;
@@ -35,7 +35,7 @@ h2 {
   justify-content: center;
   align-items: center;
   margin: 0 15%;
-  background-color: #7a7a7a;
+  background-color: #353535;
   text-align: center;
   padding: 20px 60px;
   border-radius: 25px;
@@ -53,7 +53,7 @@ h2 {
 }
 
 button {
-  background-color: rgb(0, 119, 255);
+  background-color: #86a2fc;
   border-radius: 15px;
   padding: 8px 16px;
   border-width: 0;
@@ -66,10 +66,12 @@ button {
   font-family: "Tajawal", sans-serif;
 }
 button:hover {
-  background-color: rgb(0, 52, 148);
+  background-color: #7186ce;
 }
 button:active {
-  background-color: black;
+  background-color:#5d72af;
+  border: none;
+  outline: none;
 }
 
 #choose-buttons {
@@ -91,10 +93,11 @@ button:active {
   margin-top: 5%;
 }
 #game-screen h2 {
-  color: black;
+  color: white;
   font-size: 4rem;
   margin-top: 0;
 }
+
 /*
 * {
   font-size: 62.5%;

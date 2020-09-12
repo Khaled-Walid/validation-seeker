@@ -18,6 +18,8 @@ const tailsCounter = document.getElementById("tails-counter");
 const finishingScreen = document.getElementById("finishing-screen");
 const againButton = document.getElementById("again-button");
 const bestOf = document.getElementById("best-of")
+const headsColor = document.getElementById("heads-color")
+const tailsColor = document.getElementById("tails-color")
 
 function hide(section1, section2) {
   section1.classList.toggle("hide");
@@ -36,6 +38,14 @@ function hide2(section1, section2, choice) {
   headsCounter.innerHTML = `${counterHeads}`
   tailsCounter.innerHTML = `${counterTails}`
   bestOf.innerHTML=`1`
+  if (isHeads) {
+    headsColor.style.color=("green")
+    tailsColor.style.color=("red")
+  }
+  else {
+    headsColor.style.color=("red")
+    tailsColor.style.color=("green")
+  }
 }
 
 headsButton.addEventListener(
