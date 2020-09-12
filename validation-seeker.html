@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Validation Seeker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@800&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="default.css">
   <link rel="stylesheet" href="style.css">
@@ -13,33 +15,35 @@
 
 <body>
   <div class="default-window" id="starting-screen">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ultrices ipsum, non elementum sem. Integer
-      mollis, felis aliquet condimentum dictum, velit orci rhoncus turpis, ut fringilla justo magna a ipsum. Integer
-      tincidunt libero vitae accumsan varius. Curabitur quam diam, dignissim ut purus ut, pharetra tempor nunc. Nulla
-      hendrerit tortor non orci scelerisque, sit amet convallis urna lacinia. Curabitur tincidunt at ante at venenatis.
-      Integer ullamcorper dignissim ligula at gravida. Phasellus condimentum nunc nec semper vestibulum. Nunc consequat,
-      erat in vestibulum condimentum, velit quam mattis sem, vel molestie augue est non mauris.</p>
+    <p>عارف انت لما تبقى محتار تعمل حاجة معينة ولا لأ؟ أو متردد تشتري دا ولا دا؟
+      بس تبقى في الحقيقة ميّال لخيار منهم وكل إللي محتاجه إن حد يقرّك ويؤيّدك على الخيار دا؟ 
+     <br>
+     بدل ما تقرف صحابك وتلف عليهم واحد واحد لحد ما تلاقي إللي هيأيدك على خيارك ممكن تعمل حاجة بسيطة تانية. هتجيب شلن وتلعب ملك وكتابة<br>
+     بس دا هيخلي الاحتمالات 50%:50% برضو مش كدا؟
+     مش بالظبط. احنا ماحددناش لسه الفورة هتبقى من كام. الخيار بتاعك هيبقي كسبان دايماً في فورة ما <br> كل إللي الموقع دا بيقدمهولك إنه هيساعدك تلاقي الفورة دي </p>
     <button id="starting-button">
-      click me yla
+      تمام فهمتك
     </button>
   </div>
   <div class="default-window hide" id="choose-screen">
-    <h1>Heads or Tails?</h1>
-    <button id="heads">
-      HEADS
-    </button>
+    <h1>ملك ولا كتابة؟</h1>
+    <div id=choose-buttons>
     <button id="tails">
-      TAILS
+      كتابة
     </button>
+    <button id="heads">
+      ملك
+    </button>
+  </div>
   </div>
   <div class="default-window hide" id="game-screen">
 
-    <h1>Best of <span id="best-of">1</span></h1>
+    <h1>الفورة من <span id="best-of">1</span></h1>
 
     <h2>
-      <span>Heads: <span id="heads-counter">0</span> </span>
+      <span>ملك: <span id="heads-counter">0</span> </span>
       |
-      <span>Tails: <span id="tails-counter">0</span></span>
+      <span>كتابة: <span id="tails-counter">0</span></span>
     </h2>
     <a href="javascript:void(0)" id="flip">
       <img src="head.png" alt="Coin">
@@ -47,9 +51,9 @@
   </div>
 
   <div class="default-window hide" id="finishing-screen">
-    <h1>YOU WON</h1>
+    <h1>خيارك كسب. تقدر تروح تعمله وانت مرتاح نفسياً</h1>
     <button id="again-button">
-      Flip again?
+      تحب أكسّبلك خيار تاني؟
     </button>
   </div>
 </body>
