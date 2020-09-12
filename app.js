@@ -40,12 +40,12 @@ function hide2(section1, section2, choice) {
   tailsCounter.innerHTML = `${counterTails}`
   bestOf.innerHTML=`1`
   if (isHeads) {
-    headsColor.style.color=("green")
-    tailsColor.style.color=("red")
+    headsColor.style.color=("#01B636")
+    tailsColor.style.color=("#BF0000")
   }
   else {
-    headsColor.style.color=("red")
-    tailsColor.style.color=("green")
+    headsColor.style.color=("#BF0000")
+    tailsColor.style.color=("#01B636")
   }
 }
 

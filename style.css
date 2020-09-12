@@ -110,7 +110,12 @@ button:active {
 }
 
 #finishing-screen h1 {
-  line-height: 1.2em;
+  line-height: 1.4em;
+  font-size: 1.8em;
+}
+
+#final-best {
+  color: #01B636;
 }
 
 /*
