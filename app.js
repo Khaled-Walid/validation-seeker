@@ -2,6 +2,7 @@ const startingButton = document.getElementById("starting-button");
 const startingScreen = document.getElementById("starting-screen");
 const chooseScreen = document.getElementById("choose-screen");
 const gameScreen = document.getElementById("game-screen");
+const finalBest = document.getElementById("final-best");
 
 let isHeads = true;
 let coin;
@@ -84,6 +85,7 @@ function flip() {
   
   if (userCounter > pcCounter) {
     hide(gameScreen, finishingScreen);
+    finalBest.innerHTML=`${(pcCounter*2)+1}` 
   }
 }
 

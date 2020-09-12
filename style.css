@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Jannat';
+  src: url('jannalt.ttf')  format('truetype')
+}
+
+
 * {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -12,13 +18,13 @@
 
 body {
   background-color: #121212;
-  font-size: 2em;
+  font-size: 1.8em;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
-  font-family: "Markazi Text", serif;
+  font-family: "Jannat", serif;
   margin-top: 30px;
   height: 100vh;
 }
@@ -82,20 +88,29 @@ button:active {
   align-items: center;
 }
 
+#game-screen {
+  height: auto ;
+  width: 30%;
+}
+
 #game-screen img {
   height: auto ;
-  width: 40%;
+  width: 100%;
 }
 
 #game-screen h1 {
   color: white;
-  font-size: 5rem;
+  font-size: 4rem;
   margin-top: 5%;
 }
 #game-screen h2 {
   color: white;
-  font-size: 4rem;
+  font-size: 3rem;
   margin-top: 0;
+}
+
+#finishing-screen h1 {
+  line-height: 1.2em;
 }
 
 /*
