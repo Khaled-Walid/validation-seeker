@@ -8,19 +8,21 @@ let isHeads = true;
 let coin;
 let counterHeads = 0;
 let counterTails = 0;
+let flipStop = false;
 
 const headsButton = document.getElementById("heads");
 const tailsButton = document.getElementById("tails");
-const flipButton = document.getElementById("flip");
+const flipButton = document.getElementsByClassName("flip");
+const coinFlip = document.getElementById("coin");
 
 const headsCounter = document.getElementById("heads-counter");
 const tailsCounter = document.getElementById("tails-counter");
 
 const finishingScreen = document.getElementById("finishing-screen");
 const againButton = document.getElementById("again-button");
-const bestOf = document.getElementById("best-of")
-const headsColor = document.getElementById("heads-color")
-const tailsColor = document.getElementById("tails-color")
+const bestOf = document.getElementById("best-of");
+const headsColor = document.getElementById("heads-color");
+const tailsColor = document.getElementById("tails-color");
 
 function hide(section1, section2) {
   section1.classList.toggle("hide");
@@ -34,18 +36,19 @@ startingButton.addEventListener(
 function hide2(section1, section2, choice) {
   hide(section1, section2);
   isHeads = choice;
-  counterHeads=0
-  counterTails=0
-  headsCounter.innerHTML = `${counterHeads}`
-  tailsCounter.innerHTML = `${counterTails}`
-  bestOf.innerHTML=`1`
+  counterHeads = 0;
+  counterTails = 0;
+  headsCounter.innerHTML = `${counterHeads}`;
+  tailsCounter.innerHTML = `${counterTails}`;
+  bestOf.innerHTML = `1`;
+  coinFlip.className = "";
+  flipStop = false;
   if (isHeads) {
-    headsColor.style.color=("#01B636")
-    tailsColor.style.color=("#BF0000")
-  }
-  else {
-    headsColor.style.color=("#BF0000")
-    tailsColor.style.color=("#01B636")
+    headsColor.style.color = "#01B636";
+    tailsColor.style.color = "#BF0000";
+  } else {
+    headsColor.style.color = "#BF0000";
+    tailsColor.style.color = "#01B636";
   }
 }
 
@@ -65,28 +68,64 @@ againButton.addEventListener(
 function flip() {
   let userCounter;
   let pcCounter;
+  if (flipStop) {
+    return;
+  }
+  flipStop = true;
+  coinFlip.className=""
   const random = Math.random();
-  if (random >= 0.5) {
-    coin = true;
-    counterHeads++;
-    headsCounter.innerHTML = `${counterHeads}`;
-  } else {
-    coin = false;
-    counterTails++;
-    tailsCounter.innerHTML = `${counterTails}`;
-  }
-  userCounter = isHeads ? counterHeads : counterTails;
-  pcCounter = !isHeads ? counterHeads : counterTails;
+  setTimeout(() => {
+    if (random >= 0.5) {
+      coin = true;
+      coinFlip.classList.add("heads");
+      setTimeout(() => {
+        counterHeads++;
+        headsCounter.innerHTML = `${counterHeads}`;
+      }, 1900);
+    } else {
+      coin = false;
+      coinFlip.classList.add("tails");
+      setTimeout(() => {
+        counterTails++;
+        tailsCounter.innerHTML = `${counterTails}`;
+      }, 1900);
+    }
+    setTimeout(() => {
+      userCounter = isHeads ? counterHeads : counterTails;
+      pcCounter = !isHeads ? counterHeads : counterTails;
 
-  if (pcCounter>userCounter){
-    bestOf.innerHTML=`${(pcCounter*2)+1}`
-  }
+      if (pcCounter > userCounter) {
+        bestOf.innerHTML = `${pcCounter * 2 + 1}`;
+      }
 
-  
-  if (userCounter > pcCounter) {
-    hide(gameScreen, finishingScreen);
-    finalBest.innerHTML=`${(pcCounter*2)+1}` 
-  }
+      if (userCounter > pcCounter) {
+        hide(gameScreen, finishingScreen);
+        finalBest.innerHTML = `${pcCounter * 2 + 1}`;
+      }
+      flipStop = false;
+    }, 1900);
+  }, 100);
 }
 
-flipButton.addEventListener("click", flip);
+flipButton[0].addEventListener("click", flip);
+flipButton[1].addEventListener("click", flip);
+
+/*
+jQuery(document).ready(function($){
+
+  $('#coin').on('click', function(){
+    var flipResult = Math.random();
+    $('#coin').removeClass();
+    setTimeout(function(){
+      if(flipResult <= 0.5){
+        $('#coin').addClass('heads');
+        console.log('it is head');
+      }
+      else{
+        $('#coin').addClass('tails');
+        console.log('it is tails');
+      }
+    }, 100);
+  });
+});
+*/
