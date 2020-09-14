@@ -5,6 +5,8 @@ const gameScreen = document.getElementById("game-screen");
 const finalBest = document.getElementById("final-best");
 const flipSound = document.getElementById("flip-sound");
 const clickSound = document.getElementById("click-sound");
+const victory = document.getElementById("victory-sound")
+
 
 let isHeads = true;
 let coin;
@@ -129,6 +131,7 @@ function flip() {
         setTimeout(() => {
           hide(gameScreen, finishingScreen);
           finalBest.innerHTML = `${pcCounter * 2 + 1}`;
+          victory.play()
         }, 500);
       } else {
         flipStop = false;
