@@ -97,6 +97,7 @@ function flip() {
   setTimeout(() => {
     if (random >= 0.5) {
       coin = true;
+      coinFlip.classList.remove("rotate");
       coinFlip.classList.add("heads");
       setTimeout(() => {
         counterHeads++;
