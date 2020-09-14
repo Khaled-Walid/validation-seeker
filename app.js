@@ -9,6 +9,7 @@ let coin;
 let counterHeads = 0;
 let counterTails = 0;
 let flipStop = false;
+let bestUpdate = false;
 
 const headsButton = document.getElementById("heads");
 const tailsButton = document.getElementById("tails");
@@ -23,6 +24,14 @@ const againButton = document.getElementById("again-button");
 const bestOf = document.getElementById("best-of");
 const headsColor = document.getElementById("heads-color");
 const tailsColor = document.getElementById("tails-color");
+const randomWordsH1 = document.getElementById("random-words");
+const randomWords = [
+  "طب نخلي الفورة من",
+  "طب نجرب نخليها من",
+  "تعالى نجربلك فورة من",
+  "طب نجرب مثلاً فورة من",
+  "خلاص خلي الفورة من",
+];
 
 function hide(section1, section2) {
   section1.classList.toggle("hide");
@@ -40,9 +49,11 @@ function hide2(section1, section2, choice) {
   counterTails = 0;
   headsCounter.innerHTML = `${counterHeads}`;
   tailsCounter.innerHTML = `${counterTails}`;
+  randomWordsH1.innerHTML = `الفورة من <span id="best-of">1</span>`
   bestOf.innerHTML = `1`;
   coinFlip.className = "";
   flipStop = false;
+  
   if (isHeads) {
     headsColor.style.color = "#01B636";
     tailsColor.style.color = "#BF0000";
@@ -82,21 +93,30 @@ function flip() {
       setTimeout(() => {
         counterHeads++;
         headsCounter.innerHTML = `${counterHeads}`;
-      }, 1900);
+      }, 900);
     } else {
       coin = false;
-      coinFlip.classList.add("tails" , "rotate");
+      coinFlip.classList.add("tails", "rotate");
       setTimeout(() => {
         counterTails++;
         tailsCounter.innerHTML = `${counterTails}`;
-      }, 1900);
+      }, 900);
     }
     setTimeout(() => {
       userCounter = isHeads ? counterHeads : counterTails;
       pcCounter = !isHeads ? counterHeads : counterTails;
 
-      if (pcCounter > userCounter) {
-        bestOf.innerHTML = `${pcCounter * 2 + 1}`;
+      if (coin !== isHeads) {
+        bestUpdate = true;
+      }
+
+      if (pcCounter > userCounter && bestUpdate) {
+        const randomElement =
+          randomWords[Math.floor(Math.random() * randomWords.length)];
+        randomWordsH1.innerHTML = `${randomElement} <span id="best-of">${
+          pcCounter * 2 + 1
+        }</span> ؟ `;
+        bestUpdate = false;
       }
 
       if (userCounter > pcCounter) {
@@ -104,7 +124,7 @@ function flip() {
         finalBest.innerHTML = `${pcCounter * 2 + 1}`;
       }
       flipStop = false;
-    }, 1900);
+    }, 900);
   }, 100);
 }
 

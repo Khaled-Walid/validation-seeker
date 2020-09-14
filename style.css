@@ -89,7 +89,7 @@ button:active {
 
 #game-screen {
   height: auto;
-  width: 30%;
+  width: 35%;
 }
 
 #game-screen img {
@@ -101,6 +101,7 @@ button:active {
   color: white;
   font-size: 4rem;
   margin-top: 5%;
+  line-height: 5rem;
 }
 #game-screen h2 {
   color: white;
@@ -191,16 +192,16 @@ button:active {
 }
 
 #coin.heads {
-  -webkit-animation: flipHeads 2s ease-out forwards;
-  -moz-animation: flipHeads 2s ease-out forwards;
-  -o-animation: flipHeads 2s ease-out forwards;
-  animation: flipHeads 2s ease-out forwards;
+  -webkit-animation: flipHeads 1s ease-out forwards;
+  -moz-animation: flipHeads 1s ease-out forwards;
+  -o-animation: flipHeads 1s ease-out forwards;
+  animation: flipHeads 1s ease-out forwards;
 }
 #coin.tails {
-  -webkit-animation: flipTails 2s ease-out forwards;
-  -moz-animation: flipTails 2s ease-out forwards;
-  -o-animation: flipTails 2s ease-out forwards;
-  animation: flipTails 2s ease-out forwards;
+  -webkit-animation: flipTails 1s ease-out forwards;
+  -moz-animation: flipTails 1s ease-out forwards;
+  -o-animation: flipTails 1s ease-out forwards;
+  animation: flipTails 1s ease-out forwards;
 }
 
 .rotate{
