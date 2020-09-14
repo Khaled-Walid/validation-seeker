@@ -4,6 +4,7 @@ const chooseScreen = document.getElementById("choose-screen");
 const gameScreen = document.getElementById("game-screen");
 const finalBest = document.getElementById("final-best");
 const flipSound = document.getElementById("flip-sound")
+const clickSound = document.getElementById("click-sound")
 
 let isHeads = true;
 let coin;
@@ -37,6 +38,9 @@ const randomWords = [
 function hide(section1, section2) {
   section1.classList.toggle("hide");
   section2.classList.toggle("hide");
+  if (section2 !== finishingScreen) {
+  clickSound.play()
+  }
 }
 startingButton.addEventListener(
   "click",
@@ -74,7 +78,7 @@ tailsButton.addEventListener(
 );
 againButton.addEventListener(
   "click",
-  hide.bind(null, chooseScreen, finishingScreen)
+  hide.bind(null, finishingScreen, chooseScreen)
 );
 
 function flip() {
