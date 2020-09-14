@@ -96,7 +96,7 @@ button:active {
 }
 
 #game-screen img {
-  height: auto;
+  height: 100%;
   width: 100%;
 }
 
@@ -248,8 +248,9 @@ button:active {
     margin-right: 20%;
     margin-left: 20%;
   }
+  
 }
-
+  
 /*
 #coin {
   position: relative;
