@@ -30,11 +30,11 @@ const headsColor = document.getElementById("heads-color");
 const tailsColor = document.getElementById("tails-color");
 const randomWordsH1 = document.getElementById("random-words");
 const randomWords = [
-  "طب نخلي الفورة من",
-  "طب نجرب نخليها من",
-  "تعالى نجربلك فورة من",
-  "طب نجرب مثلاً فورة من",
-  "خلاص خلي الفورة من",
+  "طب نخلي <br> الفورة من",
+  "طب نجرب نخليها <br> من",
+  "تعالى نجربلك <br> فورة من",
+  "طب نجرب مثلاً <br> فورة من",
+  "خلاص خلي <br> الفورة من",
 ];
 
 function hide(section1, section2) {
