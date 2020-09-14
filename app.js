@@ -3,8 +3,8 @@ const startingScreen = document.getElementById("starting-screen");
 const chooseScreen = document.getElementById("choose-screen");
 const gameScreen = document.getElementById("game-screen");
 const finalBest = document.getElementById("final-best");
-const flipSound = document.getElementById("flip-sound")
-const clickSound = document.getElementById("click-sound")
+const flipSound = document.getElementById("flip-sound");
+const clickSound = document.getElementById("click-sound");
 
 let isHeads = true;
 let coin;
@@ -39,7 +39,7 @@ function hide(section1, section2) {
   section1.classList.toggle("hide");
   section2.classList.toggle("hide");
   if (section2 !== finishingScreen) {
-  clickSound.play()
+    clickSound.play();
   }
 }
 startingButton.addEventListener(
@@ -87,7 +87,7 @@ function flip() {
   if (flipStop) {
     return;
   }
-  flipSound.play()
+  flipSound.play();
   flipStop = true;
   coinFlip.classList.remove("heads");
   coinFlip.classList.remove("tails");
@@ -130,9 +130,9 @@ function flip() {
           hide(gameScreen, finishingScreen);
           finalBest.innerHTML = `${pcCounter * 2 + 1}`;
         }, 500);
-        flipStop = true;
+      } else {
+        flipStop = false;
       }
-      flipStop = false;
     }, 900);
   }, 100);
 }
