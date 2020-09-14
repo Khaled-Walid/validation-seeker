@@ -14,7 +14,9 @@
   user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome and Opera */
 }
-
+html {
+  min-width: 1000px;
+}
 body {
   background-color: #121212;
   font-size: 1.8em;
@@ -114,8 +116,7 @@ button:active {
 
 #coin {
   display: flex;
-  flex-direction: column
-  ;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: transparent;
@@ -245,15 +246,14 @@ button:active {
 @media (max-width: 1450px) {
   .default-window {
     margin-top: 20%;
-    }
+  }
   #game-screen {
     width: 60%;
     margin-right: 20%;
     margin-left: 20%;
   }
-  
 }
-  
+
 /*
 #coin {
   position: relative;
