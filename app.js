@@ -49,11 +49,11 @@ function hide2(section1, section2, choice) {
   counterTails = 0;
   headsCounter.innerHTML = `${counterHeads}`;
   tailsCounter.innerHTML = `${counterTails}`;
-  randomWordsH1.innerHTML = `الفورة من <span id="best-of">1</span>`
+  randomWordsH1.innerHTML = `الفورة من <span id="best-of">1</span>`;
   bestOf.innerHTML = `1`;
   coinFlip.className = "";
   flipStop = false;
-  
+
   if (isHeads) {
     headsColor.style.color = "#01B636";
     tailsColor.style.color = "#BF0000";
@@ -120,8 +120,10 @@ function flip() {
       }
 
       if (userCounter > pcCounter) {
-        hide(gameScreen, finishingScreen);
-        finalBest.innerHTML = `${pcCounter * 2 + 1}`;
+        setTimeout(() => {
+          hide(gameScreen, finishingScreen);
+          finalBest.innerHTML = `${pcCounter * 2 + 1}`;
+        }, 500);
       }
       flipStop = false;
     }, 900);
