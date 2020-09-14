@@ -3,6 +3,7 @@ const startingScreen = document.getElementById("starting-screen");
 const chooseScreen = document.getElementById("choose-screen");
 const gameScreen = document.getElementById("game-screen");
 const finalBest = document.getElementById("final-best");
+const flipSound = document.getElementById("flip-sound")
 
 let isHeads = true;
 let coin;
@@ -82,6 +83,7 @@ function flip() {
   if (flipStop) {
     return;
   }
+  flipSound.play()
   flipStop = true;
   coinFlip.classList.remove("heads");
   coinFlip.classList.remove("tails");
