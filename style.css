@@ -261,6 +261,9 @@ button:active {
     margin-right: 20%;
     margin-left: 20%;
   }
+  #again-button {
+    padding: 2% 16px;
+  }
 }
 
 /*
