@@ -145,7 +145,6 @@ button:active {
   -ms-border-radius: 1000p;
   -o-border-radius: 1000p;
   cursor: pointer;
-  
 }
 #flip:hover {
   border-radius: 1000px;
@@ -207,7 +206,7 @@ button:active {
   animation: flipTails 1s ease-out forwards;
 }
 
-.rotate{
+.rotate {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
@@ -237,6 +236,17 @@ button:active {
     -webkit-transform: rotateY(1980deg);
     -moz-transform: rotateY(1980deg);
     transform: rotateY(1980deg);
+  }
+}
+
+@media (max-width: 750px) {
+  .default-window {
+    margin-top: 25%;
+  }
+  #game-screen {
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
   }
 }
 
