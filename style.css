@@ -181,7 +181,7 @@ button:active {
 }
 #coin img {
   position: absolute;
-  -webkit-backface-visibility: visible;
+  -webkit-backface-visibility: hidden;
 }
 .side-a {
   z-index: 100;
@@ -201,6 +201,14 @@ button:active {
   -moz-animation: flipTails 2s ease-out forwards;
   -o-animation: flipTails 2s ease-out forwards;
   animation: flipTails 2s ease-out forwards;
+}
+
+.rotate{
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
 }
 
 @-webkit-keyframes flipHeads {

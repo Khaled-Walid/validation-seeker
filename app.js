@@ -72,7 +72,8 @@ function flip() {
     return;
   }
   flipStop = true;
-  coinFlip.className=""
+  coinFlip.classList.remove("heads");
+  coinFlip.classList.remove("tails");
   const random = Math.random();
   setTimeout(() => {
     if (random >= 0.5) {
@@ -84,7 +85,7 @@ function flip() {
       }, 1900);
     } else {
       coin = false;
-      coinFlip.classList.add("tails");
+      coinFlip.classList.add("tails" , "rotate");
       setTimeout(() => {
         counterTails++;
         tailsCounter.innerHTML = `${counterTails}`;
