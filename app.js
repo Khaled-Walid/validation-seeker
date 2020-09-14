@@ -124,6 +124,7 @@ function flip() {
           hide(gameScreen, finishingScreen);
           finalBest.innerHTML = `${pcCounter * 2 + 1}`;
         }, 500);
+        flipStop = true;
       }
       flipStop = false;
     }, 900);
