@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Jannat";
-  src: url("/assets/fonts/jannalt.ttf") format("truetype");
+  src: url("../fonts/jannalt.ttf") format("truetype");
 }
 
 * {
