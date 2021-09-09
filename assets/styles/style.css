@@ -1,0 +1,268 @@
+@font-face {
+  font-family: "Jannat";
+  src: url("/assets/fonts/jannalt.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
+}
+:focus {
+  outline: 0;
+  border: 0;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+}
+html {
+  min-width: 1000px;
+}
+body {
+  background-color: #121212;
+  font-size: 1.8em;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  font-family: "Jannat", serif;
+  margin-top: 30px;
+  height: 100vh;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+
+}
+h1 {
+  margin: 20px 0;
+}
+h2 {
+  margin: 30px 0;
+}
+h4 {
+  margin: 20px 0;
+}
+.default-window {
+  display: flex;
+  flex-flow: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15%;
+  background-color: #353535;
+  text-align: center;
+  padding: 20px 60px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+  transition-timing-function: ease-out;
+}
+
+.hide {
+  display: none;
+}
+
+button {
+  background-color: #86a2fc;
+  border-radius: 15px;
+  padding: 8px 16px;
+  border-width: 0;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  margin: 2rem;
+  font-size: 1.5em;
+  font-family: "Tajawal", sans-serif;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #7186ce;
+}
+button:active {
+  background-color: #5d72af;
+  border: none;
+  outline: none;
+}
+
+#choose-buttons {
+  display: flex;
+  flex-flow: row;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-screen {
+  height: auto;
+  width: 35%;
+}
+
+#game-screen img {
+  width: fit-content;
+  height: fit-content;
+}
+
+#game-screen h1 {
+  color: white;
+  font-size: 4rem;
+  margin-top: 5%;
+  line-height: 5.2rem;
+}
+#game-screen h2 {
+  color: white;
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+#coin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: transparent;
+  border-radius: 1000px;
+  -webkit-border-radius: 1000p;
+  -moz-border-radius: 1000p;
+  -ms-border-radius: 1000p;
+  -o-border-radius: 1000p;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  background-color: transparent;
+  position: relative;
+  margin: 0 auto;
+  width: 386px;
+  height: 386px;
+  cursor: pointer;
+}
+
+#coin:focus {
+  outline: none;
+  border: 0;
+}
+
+#flip,
+#flip1 {
+  border-radius: 1000px;
+  -webkit-border-radius: 1000p;
+  -moz-border-radius: 1000p;
+  -ms-border-radius: 1000p;
+  -o-border-radius: 1000p;
+  cursor: pointer;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+
+}
+#flip:hover {
+  border-radius: 1000px;
+  -webkit-border-radius: 1000p;
+  -moz-border-radius: 1000p;
+  -ms-border-radius: 1000p;
+  -o-border-radius: 1000p;
+  box-shadow: #121212;
+}
+
+#finishing-screen h1 {
+  line-height: 1.4em;
+  font-size: 1.8em;
+}
+
+#final-best {
+  color: #01b636;
+}
+
+#coin img {
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3),
+    0 12px 20px -10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3),
+    0 12px 20px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3),
+    0 12px 20px -10px rgba(0, 0, 0, 0.4);
+}
+
+#coin {
+  transition: -webkit-transform 1s ease-in;
+  -webkit-transform-style: preserve-3d;
+}
+#coin img {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+}
+.side-a {
+  z-index: 100;
+}
+.side-b {
+  -webkit-transform: rotateY(-180deg);
+}
+
+#coin.heads {
+  -webkit-animation: flipHeads 1s ease-out forwards;
+  -moz-animation: flipHeads 1s ease-out forwards;
+  -o-animation: flipHeads 1s ease-out forwards;
+  animation: flipHeads 1s ease-out forwards;
+}
+#coin.tails {
+  -webkit-animation: flipTails 1s ease-out forwards;
+  -moz-animation: flipTails 1s ease-out forwards;
+  -o-animation: flipTails 1s ease-out forwards;
+  animation: flipTails 1s ease-out forwards;
+}
+
+.rotate {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+
+@-webkit-keyframes flipHeads {
+  from {
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  to {
+    -webkit-transform: rotateY(1800deg);
+    -moz-transform: rotateY(1800deg);
+    transform: rotateY(1800deg);
+  }
+}
+@-webkit-keyframes flipTails {
+  from {
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  to {
+    -webkit-transform: rotateY(1980deg);
+    -moz-transform: rotateY(1980deg);
+    transform: rotateY(1980deg);
+  }
+}
+
+@media (max-width: 1450px) {
+  .default-window {
+    margin-top: 20%;
+  }
+  #game-screen {
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+  #again-button {
+    padding: 2% 16px;
+  }
+}
