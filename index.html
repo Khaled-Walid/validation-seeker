@@ -38,58 +38,47 @@
     </div>
   </div>
   <div class="default-window hide" id="starting-screen">
-    <p>عارف انت لما تبقى محتار تعمل حاجة معينة ولا لأ؟ أو متردد تشتري دا ولا دا؟
-      بس تبقى في الحقيقة ميّال لخيار منهم وكل إللي محتاجه إن حد يقرّك ويؤيّدك على الخيار دا؟
-      <br>
-      بدل ما تقرف صحابك وتلف عليهم واحد واحد لحد ما تلاقي إللي هيأيدك على خيارك ممكن تعمل حاجة بسيطة تانية. هتجيب شلن
-      وتلعب ملك وكتابة<br>
-      بس دا هيخلي الاحتمالات 50%:50% برضو مش كدا؟
-      مش بالظبط. احنا ماحددناش لسه الفورة هتبقى من كام. الخيار بتاعك هيبقي كسبان دايماً في فورة ما <br> كل إللي الموقع
-      دا بيقدمهولك إنه هيساعدك تلاقي الفورة دي
+    <p>
     </p>
     <button id="starting-button">
-      تمام فهمتك
     </button>
     <audio src="./assets/audio/click.mp3" id="click-sound"></audio>
     <audio src="./assets/audio/victory.wav" id="victory-sound"></audio>
     <audio src="./assets/audio/coin-filp.wav" id="flip-sound"></audio>
   </div>
   <div class="default-window hide" id="choose-screen">
-    <h1>ملك ولا كتابة؟</h1>
+    <h1></h1>
     <div id=choose-buttons>
       <button id="tails">
-        كتابة
       </button>
       <button id="heads">
-        ملك
       </button>
     </div>
   </div>
   <div class="default-window hide" id="game-screen">
 
-    <h1 id="random-words">الفورة من <span id="best-of">1</span></h1>
-
+    <h1><span id="random-words"></span></h1>
     <h2>
-      <span id="heads-color">ملك: <span id="heads-counter">0</span> </span>
+      <span id="heads-color"></span>
       |
-      <span id="tails-color">كتابة: <span id="tails-counter">0</span></span>
+      <span id="tails-color"></span>
     </h2>
     <button id="coin">
       <img src="./assets/images/head.png" alt="Coin heads" class="side-a flip" id="flip">
       <img src="./assets/images/tail.png" alt="Coin tails" class="side-b flip" id="flip1">
     </button>
-    <h4>دوس على الكوين</h4>
+    <h4></h4>
   </div>
 
   <div class="default-window hide" id="finishing-screen">
-    <h1>خيارك كسب في فورة من <span id="final-best"></span>
-      <br> تقدر تروح تعمل إللي كنت عاوز تعمله وانت مرتاح نفسياً
+    <h1> <span id="final-quote"></span><span id="final-best"></span>
+      <br><span id="final-quote-2"></span>
     </h1>
     <button id="again-button">
-      تحب أكسِّبلك خيار تاني؟
     </button>
   </div>
   <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+  <script src="./js/language.js"></script>
 </body>
 
 </html>

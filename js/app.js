@@ -1,63 +1,21 @@
-const languageScreen = document.getElementById("language-screen");
-const startingScreen = document.getElementById("starting-screen");
-const chooseScreen = document.getElementById("choose-screen");
-const gameScreen = document.getElementById("game-screen");
-
-const arStartingButton = document.getElementById("ar");
-const enSartingButton = document.getElementById("en");
-const startingButton = document.getElementById("starting-button");
-
-const flipSound = document.getElementById("flip-sound");
-const clickSound = document.getElementById("click-sound");
-const victory = document.getElementById("victory-sound");
-
-const finalBest = document.getElementById("final-best");
-
-let isHeads = true;
-let appLanguage = "en";
-let coin;
-let counterHeads = 0;
-let counterTails = 0;
-let flipStop = false;
-let bestUpdate = false;
-
-const headsButton = document.getElementById("heads");
-const tailsButton = document.getElementById("tails");
-const flipButton = document.getElementsByClassName("flip");
-const coinFlip = document.getElementById("coin");
-
-const headsCounter = document.getElementById("heads-counter");
-const tailsCounter = document.getElementById("tails-counter");
-
-const finishingScreen = document.getElementById("finishing-screen");
-const againButton = document.getElementById("again-button");
-const bestOf = document.getElementById("best-of");
-const headsColor = document.getElementById("heads-color");
-const tailsColor = document.getElementById("tails-color");
-const randomWordsH1 = document.getElementById("random-words");
-const randomWords = [
-  "طب نخلي <br> الفورة من",
-  "طب نجرب نخليها <br> من",
-  "تعالى نجربلك <br> فورة من",
-  "طب نجرب مثلاً <br> فورة من",
-  "خلاص خلي <br> الفورة من",
-];
-
-function hide(section1, section2, language) {
+function hide(section1, section2) {
   section1.classList.toggle("hide");
   section2.classList.toggle("hide");
   if (section2 !== finishingScreen) {
     clickSound.play();
   }
-  appLanguage = language;
 }
+
+arStartingButton.addEventListener("click", translateAll.bind(null, "ar"));
+enStartingButton.addEventListener("click", translateAll.bind(null, "en"));
+
 arStartingButton.addEventListener(
   "click",
-  hide.bind(null, languageScreen, startingScreen, "ar")
+  hide.bind(null, languageScreen, startingScreen)
 );
-enSartingButton.addEventListener(
+enStartingButton.addEventListener(
   "click",
-  hide.bind(null, languageScreen, startingScreen, "en")
+  hide.bind(null, languageScreen, startingScreen)
 );
 startingButton.addEventListener(
   "click",
@@ -69,10 +27,9 @@ function hide2(section1, section2, choice) {
   isHeads = choice;
   counterHeads = 0;
   counterTails = 0;
-  headsCounter.innerHTML = `${counterHeads}`;
-  tailsCounter.innerHTML = `${counterTails}`;
-  randomWordsH1.innerHTML = `الفورة من <span id="best-of">1</span>`;
-  bestOf.innerHTML = `1`;
+  headsColor.innerHTML = i18next.t("gameScreenH2Heads", { headsCounter: 0 });
+  tailsColor.innerHTML = i18next.t("gameScreenH2Tails", { tailsCounter: 0 });
+  randomWordsH1.innerHTML = i18next.t("gameScreenQuote", { bestOfCounter: 1 });
   coinFlip.className = "";
   flipStop = false;
 
@@ -116,14 +73,18 @@ function flip() {
       coinFlip.classList.add("heads");
       setTimeout(() => {
         counterHeads++;
-        headsCounter.innerHTML = `${counterHeads}`;
+        headsColor.innerHTML = i18next.t("gameScreenH2Heads", {
+          headsCounter: counterHeads,
+        });
       }, 900);
     } else {
       coin = false;
       coinFlip.classList.add("tails", "rotate");
       setTimeout(() => {
         counterTails++;
-        tailsCounter.innerHTML = `${counterTails}`;
+        tailsColor.innerHTML = i18next.t("gameScreenH2Tails", {
+          tailsCounter: counterTails,
+        });
       }, 900);
     }
     setTimeout(() => {
@@ -135,11 +96,12 @@ function flip() {
       }
 
       if (pcCounter > userCounter && bestUpdate) {
-        const randomElement =
-          randomWords[Math.floor(Math.random() * randomWords.length)];
-        randomWordsH1.innerHTML = `${randomElement} <span id="best-of">${
-          pcCounter * 2 + 1
-        }</span> ؟ `;
+        const quotes = i18next.t("RandomQuote", {
+          returnObjects: true,
+          bestOfCounter: pcCounter * 2 + 1,
+        });
+        const randomElement = quotes[Math.floor(Math.random() * quotes.length)];
+        randomWordsH1.innerHTML = randomElement;
         bestUpdate = false;
       }
 
