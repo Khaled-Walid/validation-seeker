@@ -57,14 +57,14 @@ i18next.init({
       If not, you'd toss for best out of 3, then 5 then 7...until you win.<br>
       Inevitably winning, means inevitably having your choice validated. Enjoy :)
       `,
-        startingScreenBtn: "تمام فهمتك",
-        chooseScreen: "ملك ولا كتابة؟",
-        chooseScreenTails: "كتابة",
-        chooseScreenHeads: "ملك",
+        startingScreenBtn: "Play The Game",
+        chooseScreen: "Tails OR Heads ?",
+        chooseScreenTails: "Tails",
+        chooseScreenHeads: "Heads",
         gameScreenQuote: " الفورة من {{bestOfCounter}}",
-        gameScreenH2Heads: "ملك: {{headsCounter}}",
-        gameScreenH2Tails: "كتابة: {{tailsCounter}}",
-        gameScreenH4: "دوس على الكوين",
+        gameScreenH2Heads: "Heads: {{headsCounter}}",
+        gameScreenH2Tails: "Tails: {{tailsCounter}}",
+        gameScreenH4: "Tap The Coin",
         finishingScreenH1_1: "خيارك كسب في فورة من",
         finishingScreenH1_2:
           "تقدر تروح تعمل إللي كنت عاوز تعمله وانت مرتاح نفسياً",
