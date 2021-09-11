@@ -8,7 +8,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://khaled-walid.github.io/validation-seeker/" />
   <meta property="og:image" content="https://khaled-walid.github.io/validation-seeker/assets/images/head.png" />
-  <meta property="og:image:secure_url" content="https://khaled-walid.github.io/validation-seeker/assets/images/head.png" />
+  <meta property="og:image:secure_url"
+    content="https://khaled-walid.github.io/validation-seeker/assets/images/head.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="100" />
   <meta property="og:image:height" content="100" />
@@ -25,7 +26,18 @@
 </head>
 
 <body>
-  <div class="default-window" id="starting-screen">
+  <div class="default-window" id="language-screen">
+    <h1>CHOOSE LANGUAGE</h1>
+    <div id=choose-buttons>
+      <button id="ar">
+        عربي
+      </button>
+      <button id="en">
+        English
+      </button>
+    </div>
+  </div>
+  <div class="default-window hide" id="starting-screen">
     <p>عارف انت لما تبقى محتار تعمل حاجة معينة ولا لأ؟ أو متردد تشتري دا ولا دا؟
       بس تبقى في الحقيقة ميّال لخيار منهم وكل إللي محتاجه إن حد يقرّك ويؤيّدك على الخيار دا؟
       <br>
@@ -33,7 +45,8 @@
       وتلعب ملك وكتابة<br>
       بس دا هيخلي الاحتمالات 50%:50% برضو مش كدا؟
       مش بالظبط. احنا ماحددناش لسه الفورة هتبقى من كام. الخيار بتاعك هيبقي كسبان دايماً في فورة ما <br> كل إللي الموقع
-      دا بيقدمهولك إنه هيساعدك تلاقي الفورة دي </p>
+      دا بيقدمهولك إنه هيساعدك تلاقي الفورة دي
+    </p>
     <button id="starting-button">
       تمام فهمتك
     </button>
@@ -70,11 +83,13 @@
 
   <div class="default-window hide" id="finishing-screen">
     <h1>خيارك كسب في فورة من <span id="final-best"></span>
-      <br> تقدر تروح تعمل إللي كنت عاوز تعمله وانت مرتاح نفسياً</h1>
+      <br> تقدر تروح تعمل إللي كنت عاوز تعمله وانت مرتاح نفسياً
+    </h1>
     <button id="again-button">
       تحب أكسِّبلك خيار تاني؟
     </button>
   </div>
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
 </body>
 
 </html>

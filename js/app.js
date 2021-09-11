@@ -1,14 +1,20 @@
-const startingButton = document.getElementById("starting-button");
+const languageScreen = document.getElementById("language-screen");
 const startingScreen = document.getElementById("starting-screen");
 const chooseScreen = document.getElementById("choose-screen");
 const gameScreen = document.getElementById("game-screen");
-const finalBest = document.getElementById("final-best");
+
+const arStartingButton = document.getElementById("ar");
+const enSartingButton = document.getElementById("en");
+const startingButton = document.getElementById("starting-button");
+
 const flipSound = document.getElementById("flip-sound");
 const clickSound = document.getElementById("click-sound");
-const victory = document.getElementById("victory-sound")
+const victory = document.getElementById("victory-sound");
 
+const finalBest = document.getElementById("final-best");
 
 let isHeads = true;
+let appLanguage = "en";
 let coin;
 let counterHeads = 0;
 let counterTails = 0;
@@ -37,13 +43,22 @@ const randomWords = [
   "خلاص خلي <br> الفورة من",
 ];
 
-function hide(section1, section2) {
+function hide(section1, section2, language) {
   section1.classList.toggle("hide");
   section2.classList.toggle("hide");
   if (section2 !== finishingScreen) {
     clickSound.play();
   }
+  appLanguage = language;
 }
+arStartingButton.addEventListener(
+  "click",
+  hide.bind(null, languageScreen, startingScreen, "ar")
+);
+enSartingButton.addEventListener(
+  "click",
+  hide.bind(null, languageScreen, startingScreen, "en")
+);
 startingButton.addEventListener(
   "click",
   hide.bind(null, startingScreen, chooseScreen)
@@ -132,7 +147,7 @@ function flip() {
         setTimeout(() => {
           hide(gameScreen, finishingScreen);
           finalBest.innerHTML = `${pcCounter * 2 + 1}`;
-          victory.play()
+          victory.play();
         }, 500);
       } else {
         flipStop = false;
