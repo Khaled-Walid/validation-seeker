@@ -32,6 +32,13 @@ const bestOf = document.getElementById("best-of");
 const headsColor = document.getElementById("heads-color");
 const tailsColor = document.getElementById("tails-color");
 const randomWordsH1 = document.getElementById("random-words");
+const enRandomWords = [
+  "How about<br>a best of {{bestOfCounter}} ?",
+  "Let's try<br>a best of {{bestOfCounter}} ?",
+  "Make it<br>a best of {{bestOfCounter}} ?",
+  "Maybe<br>a best of {{bestOfCounter}} ?",
+  "A best of {{bestOfCounter}}<br>you say?",
+];
 const arRandomWords = [
   "طب نخلي <br> الفورة من {{bestOfCounter}} ",
   "طب نجرب نخليها <br> من {{bestOfCounter}}",
@@ -58,18 +65,18 @@ i18next.init({
       Inevitably winning, means inevitably having your choice validated. Enjoy :)
       `,
         startingScreenBtn: "Play The Game",
-        chooseScreen: "Tails OR Heads ?",
+        chooseScreen: "Heads OR Tails?",
         chooseScreenTails: "Tails",
         chooseScreenHeads: "Heads",
-        gameScreenQuote: " الفورة من {{bestOfCounter}}",
+        gameScreenQuote: " Best of {{bestOfCounter}}",
         gameScreenH2Heads: "Heads: {{headsCounter}}",
         gameScreenH2Tails: "Tails: {{tailsCounter}}",
         gameScreenH4: "Tap The Coin",
-        finishingScreenH1_1: "خيارك كسب في فورة من",
+        finishingScreenH1_1: " Your choice has won within a best of ",
         finishingScreenH1_2:
-          "تقدر تروح تعمل إللي كنت عاوز تعمله وانت مرتاح نفسياً",
-        finishingScreenBtn: "تحب أكسِّبلك خيار تاني؟",
-        RandomQuote: arRandomWords,
+          "Go ahead, have your decision validated! :)",
+        finishingScreenBtn: "Have another decision validated?",
+        RandomQuote: enRandomWords,
       },
     },
     ar: {
