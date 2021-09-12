@@ -53,7 +53,7 @@ i18next.init({
     en: {
       translation: {
         startingScreen: `
-        Have you ever been indecisive about making a decision or hesitant to but this or that?<br>
+        Have you ever been indecisive about making a decision or hesitant to buy this or that?<br>
       While being indecisive, you're still inclined to choose a certain option, however, all you require is someone to validate your decision.<br>
       You then approach friends and family, deep down hoping someone would give you the green light on the decision you're inclined to make.<br>
       If this is normally what you'd do, here's a game for you!<br>
